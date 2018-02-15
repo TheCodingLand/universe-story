@@ -21,12 +21,13 @@ image : {url : "/images/erastosthenes-exp.jpg", height : "486px", width : "800px
 },
 
 {
-    date : "0-1702",
+    date : "Jusqu'au 17ème siècle",
     title : "L'age sombre",
-text : "Mais même si la terre est une sphère; les dogmes pronant une terre plate règnent toujours en maître Soutenus par une église puissante. Le problème est que toutes les observations allaient à l’encontre des dogmes, spécifiquement, que l’observation de certaines étoiles (ou planètes en grec) décrivaient une orbite vraiment étrange autour de la terre, en considérant un univers géocentrique.",
+text : "Mais même si la terre est une sphère; les dogmes pronant une terre plate règnent toujours en maître, soutenus par une église puissante. Le problème est que toutes les observations allaient à l’encontre des dogmes, spécifiquement, que l’observation de certaines étoiles (ou planètes en grec) décrivaient une orbite vraiment étrange autour de la terre, en considérant un univers géocentrique.",
 image : {url : "/images/mars-retrograde.jpg", height : "486px", width : "800px"},
 },
 
+//Le plus vieux calendrier lunaire ? Ces encoches pratiquées dans une plaquette en os de l'Abri Blanchard en Dordogne (-30'000) correspondraient au trajet de l'astre dans le ciel avec ses différentes phases.
 
 ]
 

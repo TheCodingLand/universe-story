@@ -1,14 +1,10 @@
 import React from 'react';
 import Stepper, { Step, StepLabel, StepContent } from 'material-ui/Stepper';
 import Button from 'material-ui/Button';
-import CielEtoile from './CielEtoile'
+
 import articles from './articles'
 import Article from './Article'
 
-let timeline = [
-    { time: '<-30 000', title : 'Le Ciel Etoilé', component: <CielEtoile /> },
-    { time: '-2010', title : 'Erathothene', component: <CielEtoile /> },
-]
 
 function getSteps() {
     return articles.map((el) => { return el.date})
