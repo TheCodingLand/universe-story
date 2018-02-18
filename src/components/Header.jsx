@@ -48,15 +48,14 @@ class Header extends React.Component {
                     <Button
                         disabled={this.props.user.progression === 0}
                         onClick={this.props.previousArticle}
-
                     >
                         Back
                     </Button>
                     <Button
                         variant="raised"
                         color="primary"
+                        disabled={this.props.user.progression === articles.length}
                         onClick={this.props.nextArticle}
-
                     >
 
                         {this.props.user.progression === articles.length - 1 ? 'Finish' : 'Next'}
