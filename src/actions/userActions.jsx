@@ -14,6 +14,15 @@ export function nextArticle() {
 }
 
 
+export function setArticle(index) {
+    return {
+        type: "SET_ARTICLE",
+        payload: index
+    }
+
+}
+
+
 export function bookmarkArticle(index) {
     console.log(index)
     return {

@@ -21,6 +21,9 @@ export default function userReducer(state = initialState
         case "PREVIOUS_ARTICLE": {
             return { ...state, progression: state.progression - 1 }
         }
+        case "SET_ARTICLE": {
+            return { ...state, progression: action.payload }
+        }
         case "BOOKMARK_ARTICLE": {
             console.log(action.payload)
             if (state.bookmarks.includes(action.payload)) {
