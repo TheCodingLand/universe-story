@@ -8,10 +8,10 @@ class App extends Component {
   render() {
     return (
       <div>
-      <Reboot />
-      <TimeLine />
-     
-    </div>
+        <Reboot />
+        <TimeLine />
+
+      </div>
     );
   }
 }
