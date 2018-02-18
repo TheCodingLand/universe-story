@@ -50,10 +50,21 @@ class Article extends Component {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
   imgDimensions() {
+    let maxWidth = this.state.width * 80 / 100;
+    let height = this.props.article.image.height
+    let width = this.props.article.image.width
+    let maxHeight = this.props.article.image.height
 
-    let height = this.props.article.image.height * this.state.height / 1200
-    let width = this.props.article.image.width * this.state.width / 1200
-    return { width: width + "px", height: height + "px" }
+    if (this.props.article.width > maxWidth) {
+      let ratio = maxWidth / this.props.article.image.width
+      height = this.props.article.image.height / ratio
+      width = this.props.article.image.width / ratio
+      maxHeight = this.props.article.image.height / ratio
+    }
+
+
+
+    return { maxHeight: maxHeight + "px", maxWidth: maxWidth + "px", width: width + "px", height: height + "px" }
 
   }
   render() {
