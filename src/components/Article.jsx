@@ -49,14 +49,14 @@ class Article extends Component {
           <IconButton aria-label="Share">
             <ShareIcon />
           </IconButton>
-          <IconButton
+          {/* <IconButton
 
             onClick={this.handleExpandClick}
 
             aria-label="Show more"
           >
             <ExpandMoreIcon />
-          </IconButton>
+          </IconButton> */}
         </CardActions>
 
         <CardContent>
