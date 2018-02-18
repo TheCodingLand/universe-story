@@ -9,7 +9,7 @@ import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
 import MoreVertIcon from 'material-ui-icons/MoreVert';
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
-import { bookmarkArticle } from '../actions/userActions'
+import { bookmarkArticle, setArticle } from '../actions/userActions'
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles'
 
@@ -62,7 +62,7 @@ class Article extends Component {
 
     return (
       <Card className={classes.card}>
-        <CardHeader
+        <CardHeader onClick={() => this.props.setArticle(this.props.article.id)}
 
           action={
             <IconButton>
@@ -127,7 +127,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     bookmarkArticle,
-
+    setArticle
   }, dispatch)
 
 
