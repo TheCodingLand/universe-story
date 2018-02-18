@@ -7,11 +7,15 @@ import FavoriteIcon from 'material-ui-icons/Favorite';
 import ShareIcon from 'material-ui-icons/Share';
 import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
 import MoreVertIcon from 'material-ui-icons/MoreVert';
-
+import { bindActionCreators } from "redux"
+import { connect } from "react-redux"
+import { bookmarkArticle } from '../actions/userActions'
 
 import Typography from 'material-ui/Typography';
 class Article extends Component {
+
   render() {
+    console.log(this.props)
     return (
       <Card>
         <CardHeader
@@ -36,8 +40,11 @@ class Article extends Component {
           </Typography>
         </CardContent>
         <CardActions disableActionSpacing>
-          <IconButton aria-label="Add to favorites">
-            <FavoriteIcon />
+
+          <IconButton aria-label="Add to favorites" onClick={() => this.props.bookmarkArticle(this.props.article.id)}>
+            {this.props.user.bookmarks.includes(this.props.article.id) ? <FavoriteIcon color='primary' /> : <FavoriteIcon />}
+            {console.log(this.props.user.bookmarks)}
+
           </IconButton>
           <IconButton aria-label="Share">
             <ShareIcon />
@@ -61,4 +68,24 @@ class Article extends Component {
     );
   }
 }
-export default Article;
+
+function mapStateToProps(state) {
+  return {
+    user: state.user
+  }
+
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    bookmarkArticle,
+
+  }, dispatch)
+
+
+}
+
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Article);

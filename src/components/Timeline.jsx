@@ -3,56 +3,37 @@ import Stepper, { Step, StepLabel, StepContent } from 'material-ui/Stepper';
 import Button from 'material-ui/Button';
 import articles from './articles'
 import Article from './Article'
+import { bindActionCreators } from "redux"
+import { connect } from "react-redux"
+import Typography from 'material-ui/Typography';
+import { nextArticle, previousArticle } from '../actions/userActions'
 
 
 function getSteps() {
   return articles.map((el) => { return el.date })
 }
 
-
 function getStepContent(step) {
   return (<Article article={articles[step]} />)
 }
 
+
 class TimeLine extends React.Component {
-  state = {
-    activeStep: 0,
-  };
-  handleNext = () => {
-    this.setState({
-      activeStep: this.state.activeStep + 1,
-    });
-  };
-
-  handleBack = () => {
-    this.setState({
-      activeStep: this.state.activeStep - 1,
-    });
-  };
-
-
 
   render() {
+
+
     const steps = getSteps();
-    const { activeStep } = this.state;
+
+    console.log(this.props.user.progression)
+
+    console.log(this.props)
     return (
       <div><div>
-        <Button
-          disabled={activeStep === 0}
-          onClick={this.handleBack}
 
-        >
-          Back
-    </Button>
-        <Button
-          variant="raised"
-          color="primary"
-          onClick={this.handleNext}
 
-        >
-          {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-        </Button>
-      </div><Stepper activeStep={activeStep} orientation="vertical">
+      </div>
+        <Stepper activeStep={this.props.user.progression} orientation="vertical">
           {steps.map((label, index) => {
             return (
               <Step key={label}>
@@ -70,4 +51,23 @@ class TimeLine extends React.Component {
 }
 
 
-export default TimeLine
+function mapStateToProps(state) {
+  return {
+    user: state.user
+  }
+
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    nextArticle,
+    previousArticle,
+  }, dispatch)
+
+
+}
+
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(TimeLine)

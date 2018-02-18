@@ -10,8 +10,8 @@ import 'typeface-roboto'
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import amber from 'material-ui/colors/amber';
 import indigo from 'material-ui/colors/indigo';
-import Store from './Store'
-
+import store from './Store'
+import { Provider } from "react-redux"
 
 const theme = createMuiTheme({
   typography: {
@@ -19,8 +19,6 @@ const theme = createMuiTheme({
     fontWeightRegular: 200,
     fontWeightMedium: 300
   },
-
-
   palette: {
     background: {
       paper: "#000015",
@@ -42,8 +40,10 @@ const theme = createMuiTheme({
 });
 
 
-ReactDOM.render(<MuiThemeProvider theme={theme}>
-  <BrowserRouter><App /></BrowserRouter> </MuiThemeProvider>, document.getElementById('root'));
+
+
+ReactDOM.render(<Provider store={store}><MuiThemeProvider theme={theme}>
+  <BrowserRouter><App /></BrowserRouter> </MuiThemeProvider></Provider>, document.getElementById('root'));
 registerServiceWorker();
 
 

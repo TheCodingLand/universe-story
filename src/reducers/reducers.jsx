@@ -1,11 +1,12 @@
 
-import combineReducers from 'redux'
+import { combineReducers } from "redux"
 import userReducer from "./userReducer"
-import bookmarkReducer from "./bookmarkReducer"
+//import bookmarkReducer from "./bookmarkReducer"
 
 export default combineReducers(
     {
-        userReducer,
-        bookmarkReducer,
+        user: userReducer,
+        // bookmarkReducer,
     }
 )
+
