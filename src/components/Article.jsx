@@ -34,7 +34,7 @@ class Article extends Component {
   constructor(props) {
     super(props);
     this.state = { width: 0, height: 0 };
-    this.updateWindowDimensions = this.updateWindowDimensions;
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
   componentDidMount() {
@@ -50,8 +50,9 @@ class Article extends Component {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
   imgDimensions() {
-    let height = this.article.image.height / this.state.height * 800
-    let width = this.article.image.width / this.state.width * 800
+
+    let height = this.props.article.image.height * this.state.height / 1200
+    let width = this.props.article.image.width * this.state.width / 1200
     return { width: width + "px", height: height + "px" }
 
   }
@@ -73,7 +74,7 @@ class Article extends Component {
         />
 
         <CardMedia className={classes.media}
-          style={{ height: this.props.article.image.height, width: this.props.article.image.width }}
+          style={this.imgDimensions()}
           image={this.props.article.image.url}
           title={this.props.article.title}
         >
