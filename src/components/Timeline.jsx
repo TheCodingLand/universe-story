@@ -6,7 +6,7 @@ import Article from './Article'
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
 import Typography from 'material-ui/Typography';
-import { nextArticle, previousArticle } from '../actions/userActions'
+import { setArticle } from '../actions/userActions'
 
 
 function getSteps() {
@@ -37,7 +37,7 @@ class TimeLine extends React.Component {
           {steps.map((label, index) => {
             return (
               <Step key={label}>
-                <StepLabel>{label}</StepLabel>
+                <StepLabel onClick={() => this.props.setArticle(index)}>{label}</StepLabel>
                 <StepContent>
                   {getStepContent(index)}
                 </StepContent>
@@ -60,8 +60,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    nextArticle,
-    previousArticle,
+    setArticle,
+
   }, dispatch)
 
 
