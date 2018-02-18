@@ -41,23 +41,24 @@ class Header extends React.Component {
                     <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="title" color="inherit" className={classes.flex}>
+                    <Typography variant="title" color="inherit" style={{ borderRight: '0.1em solid black', padding: '0.5em' }} className={classes.flex}>
                         UNIVERSE-STORY
           </Typography>
-                    <Button color="inherit">Login</Button>
+
                     <Button
                         disabled={this.props.user.progression === 0}
                         onClick={this.props.previousArticle}
 
                     >
                         Back
-    </Button>
+                    </Button>
                     <Button
                         variant="raised"
                         color="primary"
                         onClick={this.props.nextArticle}
 
                     >
+
                         {this.props.user.progression === articles.length - 1 ? 'Finish' : 'Next'}
                     </Button>
                     <Button className="loginButton" color="inherit">Login</Button>
