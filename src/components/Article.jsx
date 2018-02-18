@@ -10,14 +10,57 @@ import MoreVertIcon from 'material-ui-icons/MoreVert';
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
 import { bookmarkArticle } from '../actions/userActions'
-
 import Typography from 'material-ui/Typography';
-class Article extends Component {
+import { withStyles } from 'material-ui/styles'
 
+
+const styles = theme => ({
+  card: {
+    maxWidth: 400,
+  },
+  media: {
+    height: 194,
+  },
+  actions: {
+    display: 'flex',
+  },
+})
+
+
+
+
+
+class Article extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { width: 0, height: 0 };
+    this.updateWindowDimensions = this.updateWindowDimensions;
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  }
+  imgDimensions() {
+    let height = this.article.image.height / this.state.height * 800
+    let width = this.article.image.width / this.state.width * 800
+    return { width: width + "px", height: height + "px" }
+
+  }
   render() {
+    const { classes } = this.props;
     console.log(this.props)
+
     return (
-      <Card>
+      <Card className={classes.card}>
         <CardHeader
 
           action={
@@ -28,11 +71,15 @@ class Article extends Component {
           title={this.props.article.title}
           subheader=""
         />
-        <CardMedia
+
+        <CardMedia className={classes.media}
           style={{ height: this.props.article.image.height, width: this.props.article.image.width }}
           image={this.props.article.image.url}
-          title="Contemplative Reptile"
-        />
+          title={this.props.article.title}
+        >
+
+        </CardMedia>
+
         <CardContent>
 
           <Typography component="p">
@@ -88,4 +135,4 @@ function mapDispatchToProps(dispatch) {
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Article);
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Article));
