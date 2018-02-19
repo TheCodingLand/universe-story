@@ -2,6 +2,8 @@
 
 Ce projet présente une série de diapos, et des explications sur l'image présentée.
 
+le but est de fabriquer une plate-forme pouvant héberger des tutos, cours, quizzs...
+
 Conçu avec reactjs, redux, material-ui-next et sauvegarde du state dans le local storage du navigateur.
 
 La progression et les favoris sont sauvegardés.
