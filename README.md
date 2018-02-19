@@ -12,7 +12,7 @@ La progression et les favoris sont sauvegardés.
 
 Wip :
 - integration de firebase : database et authentication
-- composants dynamiques en fonction de l'objet json "layout" pour les articles permettant de définir des templates
+- composants dynamiques en fonction d'un "layout" pour les articles permettant de définir des templates
 - definition d autres cours / catégories
 - système de traduction en langues multiples
 - ajout d'un CMS pour editer les articles
