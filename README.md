@@ -1,4 +1,4 @@
-# universe story
+# Universe Story (pour l'instant ^^)
 
 Ce projet présente une série de diapos, et des explications sur l'image présentée.
 
