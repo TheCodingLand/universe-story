@@ -13,7 +13,7 @@ La progression et les favoris sont sauvegardés.
 Wip :
 - integration de firebase : database et authentication
 - composants dynamiques en fonction d'un "layout" pour les articles permettant de définir des templates
-- definition d autres cours / catégories
+- definition d autres cours / catégories et un menu de sélection
 - système de traduction en langues multiples
 - ajout d'un CMS pour editer les articles
 - scrolling et affichage plein ecran.
