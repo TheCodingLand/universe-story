@@ -12,5 +12,6 @@ Wip :
 - ajout d'un CMS pour editer les articles
 - scrolling et affichage plein ecran.
 - optimisations mobile.
+- implementation de la fonction partage d'un lien vers l'article
 
 
