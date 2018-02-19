@@ -1,6 +1,10 @@
 
 
 import 'core-js/fn/array/includes';
+import 'core-js/es6/set';
+//import 'core-js/fn/array/map';
+import 'core-js/es6/map'
+import 'raf/polyfill'
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -16,8 +20,6 @@ import amber from 'material-ui/colors/amber';
 import indigo from 'material-ui/colors/indigo';
 import store from './Store'
 import { Provider } from "react-redux"
-
-
 
 
 const theme = createMuiTheme({
@@ -45,8 +47,6 @@ const theme = createMuiTheme({
     error: red,
   },
 });
-
-
 
 
 ReactDOM.render(<Provider store={store}><MuiThemeProvider theme={theme}>
