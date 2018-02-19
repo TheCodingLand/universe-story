@@ -1,5 +1,5 @@
 import React from 'react';
-import Stepper, { Step, StepLabel, StepContent } from 'material-ui/Stepper';
+import Stepper, { Step, StepLabel, StepContent, StepIcon } from 'material-ui/Stepper';
 import Button from 'material-ui/Button';
 import articles from './articles'
 import Article from './Article'
@@ -7,6 +7,7 @@ import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
 import Typography from 'material-ui/Typography';
 import { setArticle } from '../actions/userActions'
+
 
 
 function getSteps() {
@@ -34,10 +35,13 @@ class TimeLine extends React.Component {
 
       </div>
         <Stepper activeStep={this.props.user.progression} orientation="vertical">
+        
           {steps.map((label, index) => {
             return (
               <Step key={label}>
+                
                 <StepLabel onClick={() => this.props.setArticle(index)}>{label}</StepLabel>
+                
                 <StepContent>
                   {getStepContent(index)}
                 </StepContent>

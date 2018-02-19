@@ -13,7 +13,7 @@ import articles from './articles'
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
 
-const styles = {
+const styles = theme => ({
     root: {
         flexGrow: 1,
     },
@@ -25,27 +25,30 @@ const styles = {
         marginRight: 20,
     },
     loginButton: {
-        align: 'right'
+        float: 'right',
     }
-};
+});
 
-const classes = styles
+
 class Header extends React.Component {
 
 
 
     render() {
+        const { classes } = this.props;
         return <div style={{}}>
             <AppBar position="fixed">
                 <Toolbar>
                     <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="title" color="inherit" style={{ borderRight: '0.1em solid black', padding: '0.5em' }} className={classes.flex}>
+                    <Typography variant="title" color="inherit" style={{ borderRight: '0.1em solid grey', padding: '0.5em' }} className={classes.flex}>
                         UNIVERSE-STORY
           </Typography>
 
                     <Button
+                        variant="raised"
+                        color="secondary"
                         disabled={this.props.user.progression === 0}
                         onClick={this.props.previousArticle}
                     >
@@ -53,7 +56,7 @@ class Header extends React.Component {
                     </Button>
                     <Button
                         variant="raised"
-                        color="primary"
+                        color="secondary"
                         disabled={this.props.user.progression === articles.length}
                         onClick={this.props.nextArticle}
                     >

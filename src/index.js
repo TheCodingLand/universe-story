@@ -46,7 +46,38 @@ const theme = createMuiTheme({
     },
     error: red,
   },
-});
+  overrides: {
+    MuiStepIcon : {
+      // Name of the styleSheet
+      completed: {
+        color: '#FFAB00',
+      },
+      active: {
+        color: '#FFAB00',
+      },
+    },
+    MuiStepPosition: {
+      // Name of the styleSheet
+      completed: {
+        color: '#FFAB00',
+      },
+      active: {
+        color: '#FFAB00',
+        
+      },
+      text:{
+        fill:'#000'
+      }
+      
+    }
+
+
+   
+  
+}
+
+}
+);
 
 
 ReactDOM.render(<Provider store={store}><MuiThemeProvider theme={theme}>
