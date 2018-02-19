@@ -3,8 +3,8 @@
 import 'core-js/fn/array/includes';
 import 'core-js/es6/set';
 //import 'core-js/fn/array/map';
-import 'core-js/es6/map'
-import 'raf/polyfill'
+import 'core-js/es6/map';
+import 'raf/polyfill';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
