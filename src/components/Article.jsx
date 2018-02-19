@@ -72,7 +72,7 @@ class Article extends Component {
     console.log(this.props)
 
     return (
-      <Card style={{ maxWidth: this.state.width / 80 * 100 }} >
+      <Card style={{ maxWidth: '80%'}} >
         <CardHeader onClick={() => this.props.setArticle(this.props.article.id)}
 
           action={
