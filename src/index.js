@@ -1,3 +1,7 @@
+
+
+import 'core-js/fn/array/includes';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -12,8 +16,6 @@ import amber from 'material-ui/colors/amber';
 import indigo from 'material-ui/colors/indigo';
 import store from './Store'
 import { Provider } from "react-redux"
-
-
 
 
 
