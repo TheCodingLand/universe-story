@@ -1,7 +1,6 @@
 {
   "name": "universe-story",
   "version": "0.1.0",
-  "homepage": "http://julien.tech/universe",
   "private": true,
   "dependencies": {
     "core-js": "^2.5.3",
